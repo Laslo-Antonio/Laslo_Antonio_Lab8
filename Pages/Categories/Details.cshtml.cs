@@ -19,7 +19,7 @@ namespace Laslo_Antonio_Lab8.Pages.Categories
             _context = context;
         }
 
-        public Publisher Publisher { get; set; }
+        public Category Category { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -28,9 +28,9 @@ namespace Laslo_Antonio_Lab8.Pages.Categories
                 return NotFound();
             }
 
-            Publisher = await _context.Publisher.FirstOrDefaultAsync(m => m.ID == id);
+            Category = await _context.Category.FirstOrDefaultAsync(m => m.ID == id);
 
-            if (Publisher == null)
+            if (Category == null)
             {
                 return NotFound();
             }

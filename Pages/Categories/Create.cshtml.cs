@@ -25,7 +25,7 @@ namespace Laslo_Antonio_Lab8.Pages.Categories
         }
 
         [BindProperty]
-        public Publisher Publisher { get; set; }
+        public Category Category { get; set; }
 
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://aka.ms/RazorPagesCRUD.
@@ -36,10 +36,11 @@ namespace Laslo_Antonio_Lab8.Pages.Categories
                 return Page();
             }
 
-            _context.Publisher.Add(Publisher);
+            _context.Category.Add(Category);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");
-        }
+        
+    }
     }
 }
